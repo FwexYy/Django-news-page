@@ -14,15 +14,23 @@
         <div class="card-header">
             Категория: <a href="{{ news_item.category.get_absolute_url }}">{{ news_item.category }}</a>
         </div>
-        {% if item.photo %}
-        <img src="{{ news_item.photo.url }}" alt="" width="350" class="float-left mr-3">
-        {% else %}
-        <img src="{{ news_item.photo.url }}" alt="" width="350" class="float-left mr-3">
-        {% endif %}
-        <h5 class="card-title">{{  news_item.title }}</h5>
-        <p class="card-text">{{ news_item.content|safe|linebreaks }}</p>
+        <!--        <div class="media m-3">-->
+        <!--            {% if item.photo %}-->
+        <!--            <img src="{{ news_item.photo.url }}" alt="" width="350" class="float-left mr-3">-->
+        <!--            {% else %}-->
+        <!--            <img src="{{ news_item.photo.url }}" alt="" width="350" class="float-left mr-3">-->
+        <!--            {% endif %}-->
+        <!--        </div>-->
+        <div class="media m-3">
+            <div class="media-body">
+                <img src="{{ news_item.photo.url }}" alt="" width="350" class="float-left mr-3">
+                <h5 class="card-title">{{  news_item.title }}</h5>
+                <p class="card-text">{{ news_item.content|safe|linebreaks }}</p>
+            </div>
+        </div>
         <div class="card-footer text-muted">
-            {{ news_item.created_at|date:"Y-m-d H:i:s" }}</div>
+            {{ news_item.created_at|date:"Y-m-d H:i:s" }}
+        </div>
     </div>
 </div>
 {% endblock %}
