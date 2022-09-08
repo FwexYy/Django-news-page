@@ -13,11 +13,11 @@
     {% for item in object_list  %}
     <div class="card mb-3">
         <div class="card-header">
-            Категория: <a href="{{ item.category.get_absolute_url }}">{{ item.category }}</a>
+            Category: <a href="{{ item.category.get_absolute_url }}">{{ item.category }}</a>
         </div>
         <div class="media m-3">
             {% if item.photo %}
-            <img src="{{ item.photo.url }}" alt="" width="350" class="mr-3">
+            <img src="{{ item.photo.url }}" alt="" width="250" class="mr-3">
             {% else %}
             <img src="https://picsum.photos/id/237/200/235" alt="" class="mr-3">
             {% endif %}
